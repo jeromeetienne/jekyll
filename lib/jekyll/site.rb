@@ -222,7 +222,7 @@ module Jekyll
     def filter_entries(entries)
       entries = entries.reject do |e|
         unless ['.htaccess'].include?(e)
-          ['.', '_', '#'].include?(e[0..0]) || e[-1..-1] == '~' || self.exclude.include?(e)
+          ['_site', '_posts'].include?(e) || ['.', '#'].include?(e[0..0]) || e[-1..-1] == '~' || self.exclude.include?(e)
         end
       end
     end
